@@ -36,8 +36,25 @@ app.use(
 
 
 
+//  AUTH END POINTS
+    app.post("/auth/register", authCtrl.register);
+    app.post("/auth/login", authCtrl.login);
+    app.post("/auth/logout", authCtrl.logout);
+    app.get("/auth/user", authCtrl.getUser);
 
+    // GEAR END POINTS
+    // app.get("/api/gear", gearCtrl.getGear);
+    // app.post("/api/gear", gearCtrl.addGear);
+    // app.delete("/api/gear", gearCtrl.deleteGear);
+    // app.put("/api/gear", gearCtrl.editGear)
 
+    // BACKPACK SIZE POINT
+    // app.get("/api/backpack/size", packCtrl.getBackpackSize);
+
+    // PACK END POINT
+    // app.get("/api/pack", packCtrl.getPack);
+    
+    
 
 
 
