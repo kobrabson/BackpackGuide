@@ -43,16 +43,19 @@ app.use(
     app.get("/auth/user", authCtrl.getUser);
 
     // GEAR END POINTS
-    // app.get("/api/gear", gearCtrl.getGear);
-    // app.post("/api/gear", gearCtrl.addGear);
-    // app.delete("/api/gear", gearCtrl.deleteGear);
+    app.get("/api/gear", gearCtrl.getAllGear);
+    app.post("/api/gear", gearCtrl.addGear);
+    app.delete("/api/gear/:id", gearCtrl.deleteGear);
+
+    // I MAY NOT USE PUT METHOD 
     // app.put("/api/gear", gearCtrl.editGear)
 
-    // BACKPACK SIZE POINT
-    // app.get("/api/backpack/size", packCtrl.getBackpackSize);
+    // BACKPACK SIZE END POINT
+    app.get("/api/backpackSize", packCtrl.getBackpackSize);
 
     // PACK END POINT
     // app.get("/api/pack", packCtrl.getPack);
+    // app.post("/api/pack", packCtrl.postPack);
     
     
 

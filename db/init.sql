@@ -7,6 +7,7 @@ CREATE TABLE users (
 CREATE TABLE backpacks (
     backpack_id SERIAL PRIMARY KEY,
     backpack_weight VARCHAR(300),
+    backpack_desciption VARCHAR(500),
     user_id INT REFERENCES users(user_id)
 
 );
