@@ -4,4 +4,4 @@ VALUES
 ($1, $2, $3, $4, $5);
 
 SELECT * FROM gear
-ORDER BY weight DESC;
+ORDER BY weight ASC;
