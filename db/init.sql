@@ -22,6 +22,7 @@ CREATE TABLE gear (
     gear_id SERIAL PRIMARY KEY,
     name VARCHAR(250),
     weight VARCHAR(200),
+    unit VARCHAR(100),
     categories VARCHAR(200),
     description VARCHAR(1000),
     image VARCHAR(1000)
