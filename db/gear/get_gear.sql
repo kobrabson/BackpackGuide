@@ -1,3 +1,3 @@
 SELECT * FROM gear
-ORDER BY weight DESC;
+ORDER BY unit DESC, weight;
 
