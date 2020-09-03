@@ -54,8 +54,8 @@ app.use(
     app.get("/api/backpackSize", packCtrl.getBackpackSize);
 
     // PACK END POINT
-    // app.get("/api/pack", packCtrl.getPack);
-    // app.post("/api/pack", packCtrl.postPack);
+    app.get("/api/pack", packCtrl.getPack);
+    // app.post("/api/pack", packCtrl.addToPack);
     
     
 
