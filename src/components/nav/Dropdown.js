@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 function Dropdown() {
@@ -23,7 +24,7 @@ function Dropdown() {
                           <ul className='nav-ul'>About</ul>
                         <ul className='nav-ul'>Gear</ul>
                         <ul className='nav-ul'>Backpack</ul>
-                        <ul className='nav-ul'>Addition Resources</ul>
+                        <Link to='/resource'><ul className='nav-ul'>Addition Resources</ul></Link>
                         <ul className='nav-item'>Register</ul>
                 </div>
             
