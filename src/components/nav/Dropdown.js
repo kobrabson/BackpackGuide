@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './Nav.css'
 
 function Dropdown() {
     const [open, setOpen] = useState(false);
@@ -7,25 +8,25 @@ function Dropdown() {
 
     return (
         <div
+        className="display-ib"
         tabIndex={0}
         role="button"
         onKeyPress={()=> toggle(!open)}
         onClick={()=> toggle(!open)}
         >
-            <div>
-                <p></p>
-            </div>
-            <div className='nav-action' >
+            
+            <div className='nav-action navbar-item' >
                 <p>{open ? 'Close' : 'Open' }</p>
             </div>
             {open && (
-                <ul>
-                          <item>About</item>
-                        <item>Gear</item>
-                        <item>Backpack</item>
-                        <item>Addition Resources</item>
-                        <item>Register</item>
-                </ul>
+                <div className='nav-list-item'>
+                          <ul className='nav-ul'>About</ul>
+                        <ul className='nav-ul'>Gear</ul>
+                        <ul className='nav-ul'>Backpack</ul>
+                        <ul className='nav-ul'>Addition Resources</ul>
+                        <ul className='nav-item'>Register</ul>
+                </div>
+            
             )}
         </div>
     )

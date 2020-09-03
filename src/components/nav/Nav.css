@@ -1,0 +1,100 @@
+
+.navbar {
+    background-color: #bc986a;
+    height: 10vh;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+/* !-----DROPDOWN MENU BUTTON----- */
+
+ .nav-action {
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px;
+    height: 51px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.nav-action:hover {
+    text-decoration: underline;
+}
+
+/* !------LOGIN BUTTON----- */
+
+.login {
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: 700;
+    height: 63px;
+    border: none;
+    font-size: 100%;
+    padding: 5px;
+    margin: 0 .5rem;
+}
+
+.login:hover {
+    text-decoration: underline;
+}
+
+/* !------ABOUT BUTTON----- */
+
+.header-item {
+    text-transform: uppercase;
+    font-weight: 700;
+    height: 51px;
+    border: none;
+
+    padding: 5px;
+    margin: 0 .5rem;
+}
+
+.header-item:hover {
+    text-decoration: underline;
+}
+
+/* !-----DROPDOWN MENU ITEMS----- */
+
+.nav-list-item {
+    background-color: tomato;
+    padding: 10px;
+    position: absolute;
+    top: auto;
+    right: 1rem;
+    height: 40vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.nav-item {
+font-size: 24px;
+margin: 10px;
+}
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+.display-ib{
+    display: inline-block;
+}
+
+.title{
+    font-size: 50px;
+
+}
+
+.nav-container {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+}
