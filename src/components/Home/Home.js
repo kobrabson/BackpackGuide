@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Backpack() {
+function Home() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function Backpack() {
     )
 }
 
-export default Backpack
+export default Home

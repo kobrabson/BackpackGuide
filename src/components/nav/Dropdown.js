@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import './Nav.css'
 
 function Dropdown() {
@@ -21,7 +21,7 @@ function Dropdown() {
             </div>
             {open && (
                 <div className='nav-list-item'>
-                          <ul className='nav-ul'>About</ul>
+                          <Link to='/about' className='nav-ul'>About</Link>
                         <ul className='nav-ul'>Gear</ul>
                         <ul className='nav-ul'>Backpack</ul>
                         <Link to='/resource'><ul className='nav-ul'>Addition Resources</ul></Link>
@@ -33,4 +33,4 @@ function Dropdown() {
     )
 }
 
-export default Dropdown
+export default withRouter(Dropdown)
