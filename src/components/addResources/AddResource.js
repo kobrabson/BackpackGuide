@@ -3,7 +3,7 @@ import React from 'react'
 function AddResource() {
     return (
         <div>
-            Addition Resources
+            <h1>Resources</h1>
         </div>
     )
 }
