@@ -22,23 +22,20 @@ module.exports = {
     login: async (req, res) => {
         const { email, password } = req.body;
         const db = req.app.get("db");
-
-        let foundUser = await db.user.get_user([email]);
+        let foundUser = await db.user.get_user(email);
         foundUser = foundUser[0];
-        if (foundUser[0]) {
-            const compareHash = foundUser.password;
-            const authenticated = bcrypt.compareSync(password, compareHash);
-            if(authenticated) {
-                delete foundUser.password;
-                req.session.user = foundUser;
-                res.status(200).send(foundUser);
-            } else {
-                res.status(404).send('Email or password incorrect');
-            }
+        if (foundUser) {
+          const comparePassword = foundUser.password;
+          const authenticated = bcrypt.compareSync(password, comparePassword);
+          if (authenticated) {
+            delete foundUser.password;
+            req.session.user = foundUser;
+            res.status(202).send(foundUser);
+          }
         } else {
-            res.status(404).send('Email or password incorrect');
+          res.status(401).send("Email or password incorrect");
         }
-    },
+      },
 
     logout: (req, res) => {
         req.session.destroy();
