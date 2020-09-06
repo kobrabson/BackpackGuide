@@ -23,7 +23,7 @@ const Auth = (props) => {
         })
         .then((res) => {
             props.getUser();
-            props.history.push("/dash");
+            props.history.push("/backpack");
         })
         .catch((err) => {
             alert("email or password incorrect");
