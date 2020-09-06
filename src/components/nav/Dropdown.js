@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { withRouter, Link } from 'react-router-dom'
-import './Nav.css'
+import { withRouter, Link } from 'react-router-dom';
+import './Nav.css';
 
 function Dropdown() {
     const [open, setOpen] = useState(false);
@@ -21,11 +21,11 @@ function Dropdown() {
             </div>
             {open && (
                 <div className='nav-list-item'>
-                          <Link to='/about' className='nav-ul'>About</Link>
-                        <ul className='nav-ul'>Gear</ul>
-                        <ul className='nav-ul'>Backpack</ul>
-                        <Link to='/resource'><ul className='nav-ul'>Addition Resources</ul></Link>
-                        <ul className='nav-item'>Register</ul>
+                    <Link to='/about' className='nav-ul'>About</Link>
+                    <Link to='/gear'><ul className='nav-ul'>Gear</ul></Link>
+                    <Link to='/backpack'><ul className='nav-ul'>Backpack</ul></Link>
+                    <Link to='/resource'><ul className='nav-ul'>Addition Resources</ul></Link>
+                    <Link to='/Auth'><ul className='nav-item'>Register</ul></Link>
                 </div>
             
             )}
