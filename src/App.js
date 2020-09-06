@@ -3,7 +3,8 @@ import Nav from './components/nav/Nav'
 import './App.css';
 import './reset.css'
 // import Auth from './components/auth/Auth';
-import About from './components/about/About'
+import routes from './routes'
+// import About from './components/about/About'
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
     <div className="App">
       <Nav/>
       {/* <Auth/> */}
-      <About />
+      {routes}
+      {/* <About /> */}
       <h1>WORKING</h1>
     </div>
   );
