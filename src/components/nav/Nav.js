@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Dropdown from './Dropdown';
 import { logoutUser } from '../../redux/reducer'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import './Nav.css'
-import Axios from 'axios';
+// import Axios from 'axios';
 
 const Nav = (props) => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    // const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    const logout = () => {
-        Axios.get('/auth/logout')
-        .then((res) => {
-            props.logoutUser()
-            props.history.push('/')
-        })
-        .catch((err) => console.log(err));
-    }
+    // const logout = () => {
+    //     Axios.get('/auth/logout')
+    //     .then((res) => {
+    //         props.logoutUser()
+    //         props.history.push('/')
+    //     })
+    //     .catch((err) => console.log(err));
+    // }
     
 
     return (
@@ -33,7 +33,7 @@ const Nav = (props) => {
                 </div>
 
                 <div className='nav-container'>
-
+{/* 
                     {isLoggedIn ? false (
                         <Link to='/Auth'>
                             <button 
@@ -45,7 +45,7 @@ const Nav = (props) => {
                          className='login navbar-item'
                          onClick={() => logout}
                         > Logout </button>
-                     )}
+                     )} */}
 
 
                 <Link to='/about'>
