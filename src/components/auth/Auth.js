@@ -1,5 +1,7 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { loginUser } from '../../redux/reducer';
 
 
 const Auth = (props) => {
@@ -16,13 +18,12 @@ const Auth = (props) => {
     };
     
     const login = () => {
-        axios
-        .post("/auth/login", {
+        axios.post("/auth/login", {
             email: email,
             password: password,
         })
         .then((res) => {
-            props.getUser();
+            props.loginUser(res.data);
             props.history.push("/backpack");
         })
         .catch((err) => {
@@ -31,13 +32,12 @@ const Auth = (props) => {
     };
     
     const register = () => {
-        axios
-        .post("/auth/register", {
+        axios.post("/auth/register", {
             email: email,
             password: password,
         })
         .then((res) => {
-            props.getUser();
+            props.loginUser(res.data);
             props.history.push("/backpack");
         })
         .catch((err) => {
@@ -90,4 +90,6 @@ const Auth = (props) => {
     );
     };
 
-export default Auth
+    const mapStateToProps = (state) => state;
+
+export default connect(mapStateToProps, { loginUser })(Auth);

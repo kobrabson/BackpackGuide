@@ -2,38 +2,39 @@ const bcrypt = require("bcryptjs")
 
 module.exports = {
     register: async (req, res) => {
-        const { email, password } = req.body
-        const db = req.app.get("db");
-
-        let foundUser = await db.user.get_user([email]);
-
-        if(foundUser[0]) {
-            res.status(404).send('user already exists')
-        } else {
-            const salt = bcrypt.genSaltSync(15);
-            const hash = bcrypt.hashSync(password, salt);
-            const newUser = await db.user.add_user([email, hash]);
+      const db = req.app.get("db");
+      const { email, password } = req.body;
+      const existingUser = await db.user.get_user(email);
+      if (existingUser[0]) {
+        return res.status(409).send('User already exists');
+      }
+      const salt = bcrypt.genSaltSync(10);
+      const hash = bcrypt.hashSync(password, salt);
+      const [newUser] = await db.user.add_user([
+        email,
       
-            req.session.user = newUser[0];
-            res.status(201).send(newUser[0]);
-        }
+      ]);
+      console.log(newUser);
+      req.session.user = {
+        email: newUser.email
+      };
+      res.status(200).send(req.session.user)
     },
 
     login: async (req, res) => {
-        const { email, password } = req.body;
         const db = req.app.get("db");
-        let foundUser = await db.user.get_user(email);
-        foundUser = foundUser[0];
-        if (foundUser) {
-          const comparePassword = foundUser.password;
-          const authenticated = bcrypt.compareSync(password, comparePassword);
-          if (authenticated) {
-            delete foundUser.password;
-            req.session.user = foundUser;
-            res.status(202).send(foundUser);
-          }
+        const { email, password } = req.body;
+        const user = await db.user.get_user(email);
+        if (!user[0]){
+          return res.status(401).send('incorrect credentials');
         } else {
-          res.status(401).send("Email or password incorrect");
+          req.session.user = {
+            email,
+            password
+          };
+          console.log(user[0]);
+          console.log(req.session.user);
+          res.status(401).send('Email or password incorrect')
         }
       },
 
