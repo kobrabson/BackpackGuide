@@ -30,11 +30,12 @@ module.exports = {
         } else {
           req.session.user = {
             email,
-            password
+            password,
+            user_id: user[0].user_id
           };
-          console.log(user[0]);
-          console.log(req.session.user);
-          res.status(401).send('Email or password incorrect')
+          // console.log(user[0]);
+          // console.log(req.session.user);
+          res.status(200).send(req.session.user)
         }
       },
 
