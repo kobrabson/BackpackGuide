@@ -95,8 +95,10 @@ margin: 10px;
 }
 
 .title{
-    font-size: 50px;
-
+    font-size: 48px;
+    position: relative;
+    top: 0;
+    right: 42%;
 }
 
 .nav-container {
