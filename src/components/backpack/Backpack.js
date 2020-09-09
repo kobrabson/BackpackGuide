@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { selectPack } from '../../redux/reducer';
 
 // ! ----- bootstrap imports ----- !//
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown } from 'react-bootstrap';
 
-function Backpack() {
+function Backpack(props) {
 	const [ pack, setPack ] = useState([]);
-	const [ selectedPack, setSelectPack ] = useState({});
 
 	useEffect(() => {
 		axios
@@ -20,7 +21,7 @@ function Backpack() {
 				console.log(err);
 			});
 	}, []);
-
+	console.log(props.reducer.selectedPack);
 	return (
 		<div>
 			<h1>backpacks</h1>
@@ -31,7 +32,7 @@ function Backpack() {
 							<Dropdown>
 								<Dropdown.Toggle className="packSizeDropdown">Choose your pack size</Dropdown.Toggle>
 								<Dropdown.Menu>
-									<Dropdown.Item onClick={() => setSelectPack(packSize)}>
+									<Dropdown.Item onClick={() => props.selectPack(packSize)}>
 										<h6>{packSize.backpack_weight}</h6>
 										<h6>{packSize.backpack_desciption}</h6>
 									</Dropdown.Item>
@@ -44,9 +45,12 @@ function Backpack() {
 
 			<div>
 				<h1>Selected pack size</h1>
+				<h2>{props.reducer.selectedPack.backpack_desciption}</h2>
 			</div>
 		</div>
 	);
 }
 
-export default Backpack;
+const mapStateToProps = (state) => state;
+
+export default connect(mapStateToProps, { selectPack })(Backpack);
