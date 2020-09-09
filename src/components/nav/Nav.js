@@ -21,7 +21,7 @@ const Nav = (props) => {
     
 
     return (
-        <div>
+        <div className='nav-bar'>
             <nav className='navbar display-ib'>
                 <div className='logo'>
                     {/* logo box */}
@@ -48,9 +48,9 @@ const Nav = (props) => {
                      )} */}
 
 
-                <Link to='/about'>
+                <Link className='links' to='/about'>
                     <span 
-                        className='header-item'>
+                        className='header-item about'>
                          about
                     </span></Link>
                 

@@ -17,15 +17,15 @@ function Dropdown() {
         >
             
             <div className='nav-action navbar-item' >
-                <p>{open ? 'Close' : 'Open' }</p>
+                <p className='open-menu'>{open ? 'Close' : 'Open' }</p>
             </div>
             {open && (
                 <div className='nav-list-item'>
-                    <Link to='/about' className='nav-ul'>About</Link>
-                    <Link to='/gear'><ul className='nav-ul'>Gear</ul></Link>
-                    <Link to='/backpack'><ul className='nav-ul'>Backpack</ul></Link>
-                    <Link to='/resource'><ul className='nav-ul'>Addition Resources</ul></Link>
-                    <Link to='/Auth'><ul className='nav-item'>Register</ul></Link>
+                    <Link to='/about' className='nav-item links'>About</Link>
+                    <Link className='links' to='/gear'><ul className='nav-item'>Gear</ul></Link>
+                    <Link className='links' to='/backpack'><ul className='nav-item'>Backpack</ul></Link>
+                    <Link className='links' to='/resource'><ul className='nav-item'>Addition Resources</ul></Link>
+                    <Link className='links' to='/Auth'><ul className='nav-item'>Register</ul></Link>
                 </div>
             
             )}
