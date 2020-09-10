@@ -36,14 +36,14 @@ export function getUser() {
 }
 
 export function selectPack(pack) {
-	console.log(pack);
+	// console.log(pack);
 	return {
 		type: SELECT_PACK,
 		payload: pack
 	};
 }
 
-export function addGear() {
+export function addGear(pack) {
 	return {
 		type: ADD_GEAR,
 		payload: pack
