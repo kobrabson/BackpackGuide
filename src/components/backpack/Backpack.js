@@ -61,6 +61,12 @@ function Backpack(props) {
 
 			<div className="">
 				<h1>Your Pack</h1>
+				<h2>
+					{myGear.reduce((a, e) => {
+						return (a += parseFloat(e.weight));
+					}, 0)}{' '}
+					/
+				</h2>
 				<h2>{props.reducer.selectedPack.backpack_weight}</h2>
 				<div className="d-inline-block flex-row m-2">
 					{myGear.map((myGear, i, array) => {
