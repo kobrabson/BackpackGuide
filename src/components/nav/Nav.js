@@ -24,7 +24,7 @@ const Nav = (props) => {
 			<nav className="navbar display-ib">
 				<div className="logo">{/* logo box */}</div>
 
-				<div className="title display-ib">Backpack Guide</div>
+				<div className="title display-ib mx-auto">Backpack Guide</div>
 
 				<div className="nav-container">
 					{!isLoggedIn ? (
