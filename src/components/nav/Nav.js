@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Dropdown from './Dropdown';
-import { logoutUser } from '../../redux/reducer';
+import { logoutUser, loginUser } from '../../redux/reducer';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Nav.css';
@@ -8,6 +8,14 @@ import Axios from 'axios';
 
 const Nav = (props) => {
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+
+	useEffect(() => {
+		Axios.get('/auth/user')
+			.then((res) => {
+				props.loginUser(res.data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
 
 	const logout = () => {
 		Axios.post('/auth/logout')
@@ -52,4 +60,4 @@ const Nav = (props) => {
 
 const mapStateToProps = (state) => state;
 
-export default withRouter(connect(mapStateToProps, { logoutUser })(Nav));
+export default withRouter(connect(mapStateToProps, { logoutUser, loginUser })(Nav));
