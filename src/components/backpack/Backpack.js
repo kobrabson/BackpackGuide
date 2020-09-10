@@ -21,7 +21,7 @@ function Backpack(props) {
 				console.log(err);
 			});
 	}, []);
-	console.log(props.reducer.selectedPack);
+	// console.log(props.reducer.selectedPack);
 	return (
 		<div>
 			<h1>backpacks</h1>
