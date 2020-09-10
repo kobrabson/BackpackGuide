@@ -1,7 +1,29 @@
 .gear-container{
     display: block;
+    background-color: #B1AA51;
 }
 
 .multi-select{
     text-align: left;
+}
+
+.gear-images{
+    width: 200px;
+    height: 200px;
+ 
+
+}
+
+.descr{
+    height: 112px;
+}
+
+.card{
+    width: 18rem;
+    background-color: #BC986A;
+}
+
+.btn-color{
+
+    background-color: #FBEEC1;
 }
