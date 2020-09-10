@@ -74,10 +74,11 @@
     padding: 10px;
     position: absolute;
     right: 0;
-    height: 28vh;
+    height: 55vh;
     margin-top: 13px;
     display: flex;
     flex-direction: column;
+    z-index: 999;
 
 }
 
