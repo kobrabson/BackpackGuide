@@ -2,6 +2,7 @@ module.exports = {
 	getAllGear: async (req, res) => {
 		const db = req.app.get('db');
 		const gear = await db.gear.get_gear();
+		// console.log(gear);
 		res.status(200).send(gear);
 	},
 

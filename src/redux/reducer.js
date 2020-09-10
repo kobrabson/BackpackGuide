@@ -4,7 +4,7 @@ const initialState = {
 	user: {},
 	isLoggedIn: false,
 	selectedPack: {},
-	addingGear: {}
+	addingGear: []
 };
 
 const LOGIN_USER = 'LOGIN_USER';
@@ -43,10 +43,10 @@ export function selectPack(pack) {
 	};
 }
 
-export function addGear(pack) {
+export function addGear(gear) {
 	return {
 		type: ADD_GEAR,
-		payload: pack
+		payload: gear
 	};
 }
 

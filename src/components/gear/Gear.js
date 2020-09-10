@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Categories from './Categories';
 import Axios from 'axios';
 import { connect } from 'react-redux';
-import { addGear } from '../../redux/reducer';
+// import { addGear } from '../../redux/reducer';
 import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
 import './Gear.css';
 
@@ -29,7 +29,8 @@ const Gear = (props) => {
 	];
 
 	const [ gear, setGear ] = useState([]);
-	const [ addGear, setAddGear ] = useState({});
+	// const [ isChecked, setIsChecked ] = useState();
+	// const [ addGear, setAddGear ] = useState(gear_id);
 
 	useEffect(() => {
 		Axios.get('/api/gear')
@@ -41,20 +42,19 @@ const Gear = (props) => {
 			});
 	}, []);
 
-	useEffect(() => {
-		Axios.post('/api/pack/:id')
+	const addGear = (gear_id) => {
+		Axios.post(`/api/pack/${props.reducer.selectedPack.backpack_id}`, { gear_id })
 			.then((res) => {
-				setAddGear(res.data);
 				// !-----might need something else or more to effect here-----!//
+				setGear(res.data);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
-
+	};
 	return (
-		<div className="gear-container">
-			<div className="multi-select">
+		<div className="gear-container mt-5 ">
+			<div className="multi-select bg-white mb-5 pb-3">
 				<ReactMultiSelectCheckboxes
 					dropdownButton={{ right: 0 }}
 					placeholderButtonLabel="Categories"
@@ -64,17 +64,19 @@ const Gear = (props) => {
 			<div>
 				{gear.map((gear, index, array) => {
 					return (
-						<form className="form-inline justify-content-center ">
-							<div className="form-group d-flex justify-content-between " key={index}>
-								<button className="form-control" onClick={() => addGear()}>
+						<div className="card d-inline-block m-2">
+							<div className="" key={index}>
+								<img className="card-img-top gear-images mt-1" src={gear.image} alt={gear.image} />
+								<h5 className="card-body descr">
+									{gear.name} {gear.weight}
+									{gear.unit}, {gear.description}
+								</h5>
+
+								<button className="btn btn-color text-dark mb-2" onClick={() => addGear(gear.gear_id)}>
 									Add to pack
 								</button>
-								<h5 className="form-control">
-									{gear.name} {gear.weight}
-									{gear.unit}
-								</h5>
 							</div>
-						</form>
+						</div>
 					);
 				})}
 			</div>
@@ -84,4 +86,4 @@ const Gear = (props) => {
 
 const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps, { addGear })(Gear);
+export default connect(mapStateToProps)(Gear);

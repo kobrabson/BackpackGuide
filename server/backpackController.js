@@ -16,6 +16,7 @@ module.exports = {
 		const db = req.app.get('db');
 		const { id } = req.params;
 		const { gear_id } = req.body;
+		console.log(req.session.user);
 		const { user_id } = req.session.user;
 		await db.backpackgear_to_backpack.add_to_backgear(id, gear_id, user_id);
 		const backpack_gear = await db.backpackgear_to_backpack.backpackgear_to_backpack(id);

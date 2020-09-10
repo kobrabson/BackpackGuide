@@ -10,12 +10,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Backpack(props) {
 	const [ pack, setPack ] = useState([]);
+	const [ myGear, setMyGear ] = useState([]);
 
 	useEffect(() => {
 		axios
 			.get('/api/backpackSize')
 			.then((res) => {
 				setPack(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+
+	useEffect(() => {
+		axios
+			.get(`/api/pack/${props.reducer.user.user_id}`)
+			.then((res) => {
+				setMyGear(res.data);
 			})
 			.catch((err) => {
 				console.log(err);
