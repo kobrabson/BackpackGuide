@@ -16,10 +16,18 @@ module.exports = {
 		const db = req.app.get('db');
 		const { id } = req.params;
 		const { gear_id } = req.body;
-		console.log(req.session.user);
+		// console.log(req.session.user);
 		const { user_id } = req.session.user;
 		await db.backpackgear_to_backpack.add_to_backgear(id, gear_id, user_id);
 		const backpack_gear = await db.backpackgear_to_backpack.backpackgear_to_backpack(id);
 		res.status(200).send(backpack_gear);
+	},
+
+	deleteFromPack: async (req, res) => {
+		const db = req.app.get('db');
+		const { gear_id } = req.params;
+		db.backpack.delete_from_backpack(gear_id).then(() => {
+			res.sendStatus(200);
+		});
 	}
 };

@@ -52,5 +52,6 @@ app.get('/api/backpackSize', packCtrl.getBackpackSize);
 // PACK END POINT
 app.get('/api/pack/:id', packCtrl.getPack);
 app.post('/api/pack/:id', packCtrl.addToPack);
+app.delete('/api/pack/:id', packCtrl.deleteFromPack);
 
 app.listen(SERVER_PORT, () => console.log(`<-----Server Online port ${SERVER_PORT}----->`));
