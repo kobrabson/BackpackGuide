@@ -19,7 +19,6 @@ const Gear = (props) => {
 	const addGear = (gear_id) => {
 		Axios.post(`/api/pack/${props.reducer.selectedPack.backpack_id}`, { gear_id })
 			.then((res) => {
-				// !-----might need something else or more to effect here-----!//
 				setGear(res.data);
 			})
 			.catch((err) => {
