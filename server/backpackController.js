@@ -25,9 +25,10 @@ module.exports = {
 
 	deleteFromPack: async (req, res) => {
 		const db = req.app.get('db');
-		const { gear_id } = req.params;
-		db.backpack.delete_from_backpack(gear_id).then(() => {
-			res.sendStatus(200);
+		const { id } = req.params;
+		db.backpack.delete_from_backpack(id).then(async () => {
+			const backpack_gear = await db.backpackgear_to_backpack.backpackgear_to_backpack(req.session.user.user_id);
+			res.status(200).send(backpack_gear);
 		});
 	}
 };

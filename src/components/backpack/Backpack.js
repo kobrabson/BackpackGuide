@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Backpack(props) {
 	const [ pack, setPack ] = useState([]);
 	const [ myGear, setMyGear ] = useState([]);
-	const [ deleteGear, setDeleteGear ] = useState({});
 
 	useEffect(() => {
 		axios
@@ -39,16 +38,16 @@ function Backpack(props) {
 		[ props.reducer.user.user_id ]
 	);
 
-	useEffect((gear_id) => {
+	const deleteGear = (gear_id) => {
 		axios
-			.delete(`/api/pack${gear_id}`)
+			.delete(`/api/pack/${gear_id}`)
 			.then((res) => {
-				setDeleteGear(res.data);
+				setMyGear(res.data);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
+	};
 
 	return (
 		<div>
@@ -85,7 +84,7 @@ function Backpack(props) {
 				<div className="d-inline-block flex-row m-2">
 					{myGear.map((myGear, i, array) => {
 						return (
-							<div className="card d-inline-block flex-row m-2" key={i} deleteGear={deleteGear}>
+							<div className="card d-inline-block flex-row m-2" key={i}>
 								<img
 									className="my-gear-image card-img-top p-3"
 									key={i}
@@ -96,7 +95,10 @@ function Backpack(props) {
 									{myGear.name} {myGear.weight}
 									{myGear.unit}
 								</h5>
-								<button className="btn btn-primary" onClick={() => deleteGear}>
+								<button
+									className="btn-outline-warning mb-2 "
+									onClick={() => deleteGear(myGear.gear_id)}
+								>
 									remove
 								</button>
 							</div>
