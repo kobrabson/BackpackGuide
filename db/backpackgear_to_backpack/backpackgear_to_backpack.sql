@@ -1,5 +1,3 @@
-
-
 SELECT *
 FROM backpack_gear
     JOIN backpacks ON backpack_gear.backpack_id = backpacks.backpack_id
