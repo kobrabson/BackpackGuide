@@ -76,7 +76,7 @@ function Backpack(props) {
 				<h1>Your Pack</h1>
 				<h2>
 					{myGear.reduce((a, e) => {
-						return (a += parseFloat(e.weight));
+						return (a += parseFloat(e.weight).toFixed(1) * 0.0625);
 					}, 0)}{' '}
 					/
 				</h2>
