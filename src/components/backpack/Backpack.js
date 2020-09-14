@@ -78,8 +78,9 @@ function Backpack(props) {
 					{myGear.reduce((a, e) => {
 						return (a += parseFloat(e.weight).toFixed(1) * 0.0625);
 					}, 0)}{' '}
-					/
+					lbs/
 				</h2>
+
 				<h2>35lbs</h2>
 				<div className="d-inline-block flex-row m-2">
 					{myGear.map((myGear, i, array) => {
