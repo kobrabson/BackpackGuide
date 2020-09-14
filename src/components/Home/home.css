@@ -44,12 +44,25 @@ a:hover{
 .hammock{
     height: 100%;
 }
-@media(min-width: 992px) {
-    .text {
-        left: 400px;
+/* 
+@media(min-width: 1220px) {
+    .text{
+        left: 700px;
     }
     .home-link{
-        top: 15rem;
-        left: 425px;
+        top: 16rem;
+        left: 725px;
+    }
+} */
+
+@media(min-width: 992px) {
+    .text {
+        left: 300px;
+    }
+    .home-link{
+        top: 12rem;
+        left: 324px;
     }
 }
+
+

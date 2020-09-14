@@ -123,3 +123,7 @@ margin: 10px;
     text-decoration: none;
     color: black;
 }
+
+@media (max-width: 860px) {
+    .title{ display: none;}
+}
