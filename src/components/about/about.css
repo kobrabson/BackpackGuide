@@ -1,6 +1,7 @@
 .about-image {
     width: 24rem;
     padding: 1.5rem;
+    margin-top: 3.25rem;
 
 }
 .about-container{
@@ -37,7 +38,7 @@ span{
 }
 
 .about-image-2{
-    width: 10rem;
+    width: 20rem;
     padding: 1.5rem;
 }
 
