@@ -13,16 +13,19 @@ const Gear = (props) => {
 		setInput({ ...input, [e.target.name]: e.target.value });
 	};
 
-	useEffect(() => {
-		axios
-			.get('/api/gear')
-			.then((res) => {
-				setGear(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []);
+	useEffect(
+		() => {
+			axios
+				.get('/api/gear')
+				.then((res) => {
+					setGear(res.data);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		},
+		[ gear ]
+	);
 
 	const addGear = (gear_id) => {
 		axios
@@ -84,7 +87,7 @@ const Gear = (props) => {
 					</div>
 				</div>
 
-				<div className="input-group pr-5 pl-5 mb-5">
+				<div className="input-group pr-5 pl-5 mb-3">
 					<div className="input-group-prepend">
 						<span className="input-group-text" id="inputGroupFileAddon1">
 							Upload
@@ -103,6 +106,7 @@ const Gear = (props) => {
 						</label>
 					</div>
 				</div>
+				<div className="btn btn-primary form-control mb-5 mr-5 ml-5">Add Your Gear</div>
 			</div>
 		</div>
 	);
