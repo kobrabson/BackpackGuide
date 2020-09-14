@@ -1,0 +1,48 @@
+
+.bg {
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.text {
+    position: absolute;
+    left: 100px;
+    font-size: 48px;
+}
+
+.home-link{
+    position: absolute;
+    font-size: 48px;
+    top: 11rem;
+    left: 125px;
+    text-decoration: underline;
+    color: white;
+}
+a:hover{
+    color: blue;
+}
+
+
+.tent-text{
+    position: absolute;
+    left: 9.5rem;
+    color: black;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.hammock-text{
+    position: absolute;
+    left: 8.5rem;
+    color: white;
+    font-size: 24px;
+}
+
+.hammock{
+    height: 100%;
+}
+
+.scolling-text{
+    top: 20rem;
+}
