@@ -6,7 +6,7 @@ import './home.css';
 
 function Home() {
 	return (
-		<div>
+		<div className="bg-dark">
 			<div>
 				<p className=" text text-white"> Found out how much you should carry </p>
 				<a
@@ -19,7 +19,7 @@ function Home() {
 				<img className=" bg mt-3" src={background} alt="backgroundImage" />
 			</div>
 
-			<div className="container mt-5 mb-5">
+			<div className="container mt-5 pb-5">
 				<div className="row">
 					<div className="col">
 						<a href="https://www.backpacker.com/gear/the-5-best-car-camping-tents-of-2020" target="_blank">

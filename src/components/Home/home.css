@@ -11,6 +11,8 @@
     font-size: 48px;
 }
 
+
+
 .home-link{
     position: absolute;
     font-size: 48px;
@@ -42,7 +44,12 @@ a:hover{
 .hammock{
     height: 100%;
 }
-
-.scolling-text{
-    top: 20rem;
-}
+/* @media(min-width: 992px) {
+    .text {
+        left: 400px;
+    }
+    .home-link{
+        top: 15rem;
+        left: 425px;
+    }
+} */
