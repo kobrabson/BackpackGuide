@@ -15,10 +15,14 @@ function Dropdown() {
 			onClick={() => toggle(!open)}
 		>
 			<div className="nav-action navbar-item">
-				<p className="open-menu dropdown-toggle">{open ? 'Close' : 'Open'}</p>
+				<p className="open-menu dropdown-toggle">{open ? 'Close' : '☰'}</p>
 			</div>
 			{open && (
 				<div className="nav-list-item">
+					<Link className="links" to="/">
+						<ul className="nav-item">Home</ul>
+					</Link>
+					<div class="dropdown-divider" />
 					<Link to="/about" className="nav-item links">
 						About
 					</Link>
@@ -37,10 +41,6 @@ function Dropdown() {
 					<div class="dropdown-divider" />
 					<Link className="links" to="/Auth">
 						<ul className="nav-item">Register</ul>
-					</Link>
-					<div class="dropdown-divider" />
-					<Link className="links" to="/">
-						<ul className="nav-item">Home</ul>
 					</Link>
 				</div>
 			)}
