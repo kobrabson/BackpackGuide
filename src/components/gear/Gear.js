@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { addGear } from '../../redux/reducer';
 import './Gear.css';
 
 const Gear = (props) => {
@@ -28,6 +29,7 @@ const Gear = (props) => {
 			.post(`/api/pack/${props.reducer.selectedPack.backpack_id}`, { gear_id })
 			.then((res) => {
 				setGear(res.data);
+				props.history.push('/backpack');
 			})
 			.catch((err) => {
 				console.log(err);
@@ -56,6 +58,8 @@ const Gear = (props) => {
 				})}
 			</div>
 
+			<h1 className="text-center m-5">Add your own Items</h1>
+
 			<div className=" input-fields input-group mx-auto mb-3" style={{ width: '700px' }}>
 				<input
 					type="text"
@@ -80,7 +84,7 @@ const Gear = (props) => {
 					</div>
 				</div>
 
-				<div className="input-group pr-5 pl-5">
+				<div className="input-group pr-5 pl-5 mb-5">
 					<div className="input-group-prepend">
 						<span className="input-group-text" id="inputGroupFileAddon1">
 							Upload
@@ -106,4 +110,4 @@ const Gear = (props) => {
 
 const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps)(Gear);
+export default connect(mapStateToProps, { addGear })(Gear);
