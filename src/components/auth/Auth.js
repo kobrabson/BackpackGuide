@@ -68,28 +68,35 @@ const Auth = (props) => {
 				/>
 				{toggle ? (
 					<div>
-						<button className=" btn-color text-dark btn mt-2 w-25 " type="submit" onClick={login}>
+						<button
+							className="btn-color btn-dark text-dark btn mr-2 mt-2 w-25"
+							type="submit"
+							onClick={login}
+						>
 							Login
 						</button>
-						<br />
+
 						<button
 							className="btn btn-color btn-dark text-dark mt-2"
 							onClick={() => {
 								setToggle(!toggle);
 							}}
 						>
-							Haven't signed up? Click to register
+							Haven't signed up?
 						</button>
 					</div>
 				) : (
 					<div>
-						<button onClick={register}>Register</button>
+						<button className="btn-color btn-dark text-dark btn mt-2 w-25" onClick={register}>
+							Register
+						</button>
 						<button
+							className="btn btn-color btn-dark text-dark mt-2 ml-2"
 							onClick={() => {
 								setToggle(!toggle);
 							}}
 						>
-							Already signed up? Click to login
+							Click to login
 						</button>
 					</div>
 				)}
