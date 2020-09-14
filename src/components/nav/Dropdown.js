@@ -26,7 +26,7 @@ function Dropdown() {
 					<Link className="links" to="/gear">
 						<ul className="nav-item">Gear</ul>
 					</Link>
-					<div class="dropdown-divider3" />
+					<div class="dropdown-divider" />
 					<Link className="links" to="/backpack">
 						<ul className="nav-item">Backpack</ul>
 					</Link>
@@ -39,6 +39,9 @@ function Dropdown() {
 						<ul className="nav-item">Register</ul>
 					</Link>
 					<div class="dropdown-divider" />
+					<Link className="links" to="/">
+						<ul className="nav-item">Home</ul>
+					</Link>
 				</div>
 			)}
 		</div>

@@ -51,7 +51,6 @@ function Backpack(props) {
 
 	return (
 		<div>
-			<h1>backpacks</h1>
 			<div>
 				{pack.map((packSize, index, array) => {
 					return (

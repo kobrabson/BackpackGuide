@@ -17,7 +17,7 @@
     text-transform: uppercase;
     font-weight: 700;
     padding: 5px;
-    height: 51px;
+    height: 45px;
     border: none;
     display: flex;
     justify-content: center;
@@ -79,7 +79,7 @@
     padding: 10px;
     position: absolute;
     right: 0;
-    height: 75vh;
+    height: 76vh;
     margin-top: 13px;
     display: flex;
     flex-direction: column;
