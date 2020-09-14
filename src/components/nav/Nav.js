@@ -3,6 +3,7 @@ import Dropdown from './Dropdown';
 import { logoutUser, loginUser } from '../../redux/reducer';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import backpackLogo from '../image/backpackLogo.png';
 import './Nav.css';
 import Axios from 'axios';
 
@@ -30,7 +31,7 @@ const Nav = (props) => {
 	return (
 		<div className="nav-bar">
 			<nav className="navbar display-ib">
-				<div className="logo">{/* logo box */}</div>
+				<img className="logo" src={backpackLogo} alt="logo" />
 
 				<div className="title display-ib mx-auto">Backpack Guide</div>
 
