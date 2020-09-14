@@ -44,7 +44,7 @@ a:hover{
 .hammock{
     height: 100%;
 }
-/* @media(min-width: 992px) {
+@media(min-width: 992px) {
     .text {
         left: 400px;
     }
@@ -52,4 +52,4 @@ a:hover{
         top: 15rem;
         left: 425px;
     }
-} */
+}
